@@ -47,11 +47,6 @@ def process_file(input_path: str, output_path: str) -> None:
             label = label.strip()
             sentence = sentence.strip()
 
-            # Optionally validate label (you can remove this check if not needed)
-            if label not in ("eng", "deu"):
-                print(f"Warning: line {lineno} has unexpected label '{label}' (expected 'eng' or 'deu')", file=sys.stderr)
-                # proceed anyway
-
             th_count = count_bigram(sentence, "th")
             ch_count = count_bigram(sentence, "ch")
 
